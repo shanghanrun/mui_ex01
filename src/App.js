@@ -1,18 +1,17 @@
 
-import './App.css';
 import {Button} from '@mui/material'
-import { CustomButton } from './CustomButton.style';
-
+import styles from "./App.module.css"
 
 function App() {
+  console.log('styles :', styles)
+  console.log('styles.button: ', styles.button)
   return (
     <div>
-      <CustomButton variant="contained" disableRipple={true}
-        border="blue"
-      >Contained</CustomButton>
-      <Button variant="contained" disableElevation
-        color="secondary">Contained</Button>
-      <Button id="text-buttons" color="success">Text</Button>
+      <Button className={styles['button']}>global</Button>
+
+      <Button id="text-buttons" variant="outlined" color="success" sx={{ml:'100px'}}>Text</Button>
+
+
       <div style={{height:'1000px'}}></div>
       <Button variant="outlined" color="error">Outlined</Button>
       <Button disabled>Disabled</Button>
